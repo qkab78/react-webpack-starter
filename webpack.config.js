@@ -12,7 +12,12 @@ module.exports = {
             {
                 test:/\.js$/,
                 exclude:/node_modules/,
-                loader:'babel-loader'
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        plugins:['babel-plugin-transform-class-properties']
+                    }
+                }
             }
 
         ]
